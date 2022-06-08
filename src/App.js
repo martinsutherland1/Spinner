@@ -6,14 +6,19 @@ import Request from './Helpers/Request';
 import { Circles, Grid, TailSpin, Oval } from  'react-loader-spinner'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
+
+
 function App() {
 
   const [users, setUsers] = useState([])
   const [dataAvailable, setDataAvailable] = useState(false)
+  const endPoint = "https://mg-backend-server.herokuapp.com"
   
   const requestAll = function(){
       const request = new Request();
-      const usersPromise = request.get('/api/users')
+      const usersPromise = request.get(endPoint + '/api/users')
+
+      
       
      Promise.all([usersPromise])
       .then((data) => {
@@ -29,7 +34,7 @@ function App() {
 
     const deleteUser = function(id){
       const request = new Request();
-      const url = "/api/users/" + id
+      const url = endPoint + "/api/users/" + id
       request.delete(url)
       .then(() => window.location = "/")
     }
@@ -64,7 +69,7 @@ function App() {
 
         <div className="App">
           <img width='1000px' height="300px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"></img>
-          <Users users={users} />
+          <Users users={users} endPoint={endPoint} />
           <Spinner names={users} clearNames={clearNames} clearAll={clearAll}  />
           
         </div>

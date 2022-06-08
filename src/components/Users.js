@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Request from '../Helpers/Request'
 
-const Users = ({users}) => {
+const Users = ({users, endPoint}) => {
 
     const [user, setUser] = useState(
         {
@@ -11,7 +11,7 @@ const Users = ({users}) => {
 
     const postUser = function(user){
         const request = new Request();
-         request.post("/api/users", user)
+         request.post(endPoint + "/api/users", user)
         .then(() => window.location = '/')
       }
 
