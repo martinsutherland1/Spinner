@@ -36,3 +36,90 @@
     transform: rotate(360deg);
   }
 }
+
+.all-names {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px;
+
+}
+
+#selected-name-box {
+  border: 4px solid black;
+  background-color: #ED1D24;;
+  width: 200px;
+  height: 251px;
+  margin-top: 20px;
+  color: white;
+}
+
+#name-box {
+  border: 4px solid black;
+  background-color: white;
+  width: 200px;
+  height: 251px;
+  margin-top: 20px;
+}
+
+#names {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+}
+
+button {
+  width: 100px;
+  height: 20px;
+  background-color: #292929;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 40px;
+  
+}
+
+#winner {
+  color: black;
+  border: 4px solid goldenrod;
+  background-color: white;
+  width: 140px;
+  height: 60px;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  
+}
+
+#winner-div {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  margin: 4px;
+  
+}
+
+#loading {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
