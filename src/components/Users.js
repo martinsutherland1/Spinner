@@ -1,13 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Request from '../Helpers/Request'
 
-const Users = ({users, endPoint}) => {
+const Users = ({users, endPoint, setUsers, setDataAvailable, refreshPage}) => {
 
+    
     const [user, setUser] = useState(
         {
             username: ""
         }
     )
+
+ 
+     
 
     const postUser = function(user){
         const request = new Request();
@@ -25,12 +29,15 @@ const Users = ({users, endPoint}) => {
         setUser(copiedTeam)
         
     }
+   
     
     const handleSubmit = function(event){
         event.preventDefault();
         console.log(user)
         if (users.length < 8){
-            postUser(user);  
+            users.push(user)
+            localStorage.setItem("all-users", JSON.stringify(users))
+            refreshPage()
         }
         setUser({
             username: ""

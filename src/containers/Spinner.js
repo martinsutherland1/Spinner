@@ -49,6 +49,8 @@ const Spinner = ({names, clearNames, clearAll}) => {
         return Math.floor(Math.random() * max);
     }
 
+    
+
    const returnNames = names.map((name, index) => {
 
         if (winner === name.username){
@@ -57,7 +59,7 @@ const Spinner = ({names, clearNames, clearAll}) => {
                 <p>{name.username}</p>
                   <img src={marvel[index]}/>
                   
-                  <div><button onClick={() => clearNames(name.id)}>REMOVE</button></div>
+                  <div><button onClick={() => clearNames(index)}>REMOVE</button></div>
                 </div>
                 
             )
@@ -68,7 +70,7 @@ const Spinner = ({names, clearNames, clearAll}) => {
                  <div id="name-box">
                     <p>{name.username}</p>
                    <img src={marvel[index]}/>
-                   <div><button onClick={() => clearNames(name.id)}>REMOVE</button></div>
+                   <div><button onClick={() => clearNames(index)}>REMOVE</button></div>
                 </div>
                 
                 </>
