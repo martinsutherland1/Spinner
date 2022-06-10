@@ -90,7 +90,6 @@ function App() {
       return (
 
         <div className="App">
-          <img width='1000px' height="300px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"></img>
           <Users refreshPage={refreshPage} users={users} endPoint={endPoint} setUsers={setUsers} setDataAvailable={setDataAvailable} />
           <Spinner names={users} clearNames={clearNames} clearAll={clearAll}  />
           
